@@ -1,17 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import DeposerTicket from './compsonts/clientelle/DeposerTicket'
+
+const Index =()=> {
+  const [login]=useState('Tunisie Bank ') 
+  const [contrats]=useState(['contrat 1','contrat 2','contrat 3','contrat 4']) 
+  
+    return <DeposerTicket client={login} listeContrats={contrats} />
+}
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+   <Index></Index>
   </React.StrictMode>,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
 reportWebVitals();
